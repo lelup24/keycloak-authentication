@@ -1,0 +1,38 @@
+.kachel {
+  height: 12rem;
+  width: 20rem;
+  max-width: 95vw;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+.icon {
+  color: #929ca2;
+  height: 5rem;
+  width: 5rem;
+  transition: 0.5s;
+}
+
+h2 {
+  z-index: 1000;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.kachel:hover {
+  transform: scale(1.05);
+  box-shadow: 8px 5px 12px 0 rgba(0 0 0 / 50%);
+
+  .icon {
+    color: #004c5e;
+  }
+}
+
+.kachel-inhalt {
+  display: flex;
+  flex-direction: column;
+}
+

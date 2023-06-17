@@ -1,0 +1,43 @@
+:root {
+    --pf-global--primary-color--100: #b3c9cf;
+    --pf-global--primary-color--200: #80a6af;
+    --pf-global--primary-color--500: #004c5e;
+    --pf-c-button--m-primary--BackgroundColor: #004c5e;
+    --pf-c-button--disabled--Color: #004c5e;
+    --default-background-color: #97A1CDFF;
+    --link-hover-color: #004c5e;
+}
+
+.login-pf body {
+    background-image: url('startseite.jpg'),
+    linear-gradient(135deg, var(--default-background-color) 0%, #A96699FF 100%);
+}
+
+.login-pf a:hover {
+    color: var(--pf-global--primary-color--200);
+    text-decoration: none;
+}
+
+.pf-c-form-control {
+    color: var(--pf-global--primary-color--500);
+}
+
+.pf-c-button.pf-m-primary {
+    background-color: var(--pf-global--primary-color--500);
+}
+
+.pf-m-primary:hover {
+    background-color: var(--pf-global--primary-color--200);
+}
+
+.card-pf {
+    border-color: var(--pf-global--primary-color--500);
+}
+
+#kc-header-wrapper {
+    padding: 35px 10px 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0 0 0 /50%);
+}

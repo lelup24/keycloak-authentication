@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  postgres:
+    container_name: keycloak_db
+    image: postgres:latest
+    volumes:
+      - keycloak_db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+    ports:
+      - "6433:5432"
+
+  keycloak:
+    image: docker.io/bitnami/keycloak:latest
+    ports:
+      - "9999:8080"
+    environment:
+      KEYCLOAK_CREATE_ADMIN_USER: true
+      KEYCLOAK_ADMIN_USER: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KEYCLOAK_DATABASE_HOST: postgres
+      KEYCLOAK_DATABASE_PORT: 5432
+      KEYCLOAK_DATABASE_NAME: keycloak
+      KEYCLOAK_DATABASE_USER: keycloak
+      KEYCLOAK_DATABASE_PASSWORD: keycloak
+    volumes:
+      - ./keycloak/themes:/opt/bitnami/keycloak/themes/custom
+      - ./keycloak/providers:/opt/bitnami/keycloak/providers
+    depends_on:
+      - postgres
+
+volumes:
+  keycloak_db_data:
+    driver: local

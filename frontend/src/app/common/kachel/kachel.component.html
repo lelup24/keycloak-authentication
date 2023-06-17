@@ -1,0 +1,13 @@
+<mat-card *ngIf="!asButton" class="kachel" [routerLink]="kachel.route">
+  <mat-card-content class="kachel-inhalt">
+    <mat-icon class="icon" [svgIcon]="kachel.iconName"></mat-icon>
+  </mat-card-content>
+  <h2>{{kachel.titel}}</h2>
+</mat-card>
+
+<mat-card *ngIf="asButton" class="kachel" [routerLink]="kachel.route">
+  <mat-card-content class="kachel-inhalt">
+    <mat-icon class="icon" [svgIcon]="kachel.iconName"></mat-icon>
+  </mat-card-content>
+  <h2>{{kachel.titel}}</h2>
+</mat-card>
