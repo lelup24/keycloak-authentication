@@ -15,11 +15,10 @@ export class AuthService {
   keycloak = inject(KeycloakService);
 
   constructor() {
-    this.keycloak.isLoggedIn().then((loggedIn) => {
-      if (loggedIn) {
-        this.keycloak.getKeycloakInstance().loadUserProfile();
-      }
-    });
+    if (this.keycloak.isLoggedIn()) {
+      this.keycloak.getKeycloakInstance().loadUserProfile();
+    }
+
   }
 
   public logout(): void {
@@ -31,7 +30,7 @@ export class AuthService {
   }
 
 
-  isLoggedIn(): Promise<boolean> {
+  isLoggedIn(): boolean {
     return this.keycloak.isLoggedIn();
   }
 
