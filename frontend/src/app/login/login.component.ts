@@ -3,7 +3,7 @@ import {DomSanitizer} from "@angular/platform-browser";
 import {AuthService} from "../authentication/auth.service";
 import {MatIconRegistry} from "@angular/material/icon";
 import {Kachel} from "../common/kachel/kachel.component";
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-login',

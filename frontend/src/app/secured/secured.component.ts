@@ -1,6 +1,6 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {AuthService} from "../authentication/auth.service";
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-secured',
