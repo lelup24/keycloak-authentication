@@ -2,7 +2,7 @@ version: "3.9"
 services:
   postgres:
     container_name: keycloak_db
-    image: postgres:latest
+    image: postgres:16
     volumes:
       - keycloak_db_data:/var/lib/postgresql/data
     environment:
@@ -13,7 +13,7 @@ services:
       - "6433:5432"
 
   keycloak:
-    image: docker.io/bitnami/keycloak:latest
+    image: docker.io/bitnami/keycloak:26.0.0
     ports:
       - "9999:8080"
     environment:
